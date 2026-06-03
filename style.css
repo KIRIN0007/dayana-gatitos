@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Fredoka',sans-serif;
+    background:linear-gradient(
+        135deg,
+        #ffdde1,
+        #ffd6ec,
+        #fbe4ff,
+        #ffe8d6
+    );
+}
+
+/* CONTENEDOR */
+
+.container{
+    text-align:center;
+    opacity:0;
+    animation:showName 3s ease forwards;
+    animation-delay:7s;
+}
+
+/* NOMBRE */
+
+.name{
+    font-size:7rem;
+    font-weight:700;
+    color:white;
+
+    text-shadow:
+    0 0 10px #ff69b4,
+    0 0 20px #ff69b4,
+    0 0 40px #ff69b4,
+    0 0 60px #ff69b4;
+
+    animation:
+    glow 2s infinite alternate,
+    floatName 3s ease-in-out infinite;
+}
+
+/* SUBTITULO */
+
+.subtitle{
+    margin-top:20px;
+    font-size:1.5rem;
+    color:#ff4d94;
+    animation:fadeUp 2s ease;
+}
+
+/* GATOS */
+
+.cats{
+    position:absolute;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.cats span{
+    position:absolute;
+    font-size:3rem;
+    bottom:-100px;
+    animation:fly 8s linear infinite;
+}
+
+/* Posiciones */
+
+.cats span:nth-child(1){
+    left:5%;
+    animation-delay:0s;
+}
+
+.cats span:nth-child(2){
+    left:15%;
+    animation-delay:1s;
+}
+
+.cats span:nth-child(3){
+    left:28%;
+    animation-delay:2s;
+}
+
+.cats span:nth-child(4){
+    left:40%;
+    animation-delay:3s;
+}
+
+.cats span:nth-child(5){
+    left:52%;
+    animation-delay:4s;
+}
+
+.cats span:nth-child(6){
+    left:63%;
+    animation-delay:5s;
+}
+
+.cats span:nth-child(7){
+    left:74%;
+    animation-delay:6s;
+}
+
+.cats span:nth-child(8){
+    left:84%;
+    animation-delay:2.5s;
+}
+
+.cats span:nth-child(9){
+    left:92%;
+    animation-delay:1.5s;
+}
+
+.cats span:nth-child(10){
+    left:97%;
+    animation-delay:4.5s;
+}
+
+/* HUELLITAS */
+
+.paws{
+    position:absolute;
+    bottom:30px;
+    width:100%;
+    text-align:center;
+    font-size:2rem;
+    color:#ff7eb3;
+    opacity:0;
+
+    animation:
+    pawsShow 3s forwards;
+    animation-delay:5s;
+}
+
+/* ANIMACIONES */
+
+@keyframes fly{
+    0%{
+        transform:
+        translateY(0)
+        rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:
+        translateY(-50vh)
+        rotate(180deg);
+    }
+
+    100%{
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes showName{
+    from{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes glow{
+    from{
+        text-shadow:
+        0 0 10px #ff69b4,
+        0 0 20px #ff69b4;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #ff1493,
+        0 0 40px #ff1493,
+        0 0 80px #ff1493;
+    }
+}
+
+@keyframes floatName{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pawsShow{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
